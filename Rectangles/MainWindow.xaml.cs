@@ -24,5 +24,26 @@ namespace Rectangles
         {
             InitializeComponent();
         }
+
+        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!int.TryParse(textBox.Text, out int side))
+            {
+                textBox.Text = "";
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!int.TryParse(textBox1.Text, out int side))
+            {
+                textBox1.Text = "";
+            }
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            if 
+        }
     }
 }

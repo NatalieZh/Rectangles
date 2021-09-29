@@ -5,10 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Rectangles"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="476">
     <Grid>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="113,10,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <GroupBox x:Name="listOfRectangles" Header="GroupBox" HorizontalAlignment="Left" Height="253" Margin="27,138,0,0" VerticalAlignment="Top" Width="163"/>
+        <Grid>
+            <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="83,12,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14" TextChanged="textBox_TextChanged"/>
+            <GroupBox x:Name="listOfRectangles" Header="Rectangles" HorizontalAlignment="Left" Height="326" Margin="27,98,0,0" VerticalAlignment="Top" Width="199"/>
+            <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="284,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="14" TextChanged="textBox1_TextChanged"/>
+            <Label x:Name="lblSideA" Content="SideA" HorizontalAlignment="Left" Height="25" Margin="10,10,0,0" VerticalAlignment="Top" Width="48"/>
+            <Label x:Name="lblSideB" Content="SideB" HorizontalAlignment="Left" Height="25" Margin="231,8,0,0" VerticalAlignment="Top" Width="48"/>
+            <Button x:Name="button" Content="Add rectangle" HorizontalAlignment="Left" Margin="27,49,0,0" VerticalAlignment="Top" Height="35" Width="199" Click="button_Click"/>
+
+        </Grid>
 
     </Grid>
 </Window>

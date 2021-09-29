@@ -36,32 +36,32 @@ namespace Rectangles
             sideB = 3;
         }
 
-        int GetSideA()
+        public int GetSideA()
         {
             return sideA;
         }
 
-        int GetSideB()
+        public int GetSideB()
         {
             return sideB;
         }
 
-        double Area()
+        public double Area()
         {
             return sideA * sideB;
         }
 
-        double Perimeter()
+        public double Perimeter()
         {
             return sideA + sideB;
         }
 
-        bool IsSquare()
+        public bool IsSquare()
         {
             return sideA == sideB;
         }
 
-        void ReplaceSides()
+        public void ReplaceSides()
         {
             int temp = sideA;
             sideA = sideB;
