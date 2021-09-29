@@ -30,6 +30,19 @@ namespace Rectangles
             sideA = a < 1 ? 0 : a;
             sideB = 5;
         }
+        public Rectangle(int b, int? a)
+        {
+            sideB = b < 1 ? 0 : b;
+            if (a.HasValue && a > 0)
+            {
+                sideA = a.Value;
+            }
+            else 
+            {
+                sideA = 0;
+            }
+
+        }
         public Rectangle()
         {
             sideA = 4;
@@ -53,7 +66,7 @@ namespace Rectangles
 
         public double Perimeter()
         {
-            return sideA + sideB;
+            return (sideA + sideB)*2;
         }
 
         public bool IsSquare()

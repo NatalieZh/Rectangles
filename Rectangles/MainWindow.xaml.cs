@@ -20,30 +20,52 @@ namespace Rectangles
     /// </summary>
     public partial class MainWindow : Window
     {
+        private ArrayRectangles rectangles;
         public MainWindow()
         {
             InitializeComponent();
-        }
 
-        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (!int.TryParse(textBox.Text, out int side))
-            {
-                textBox.Text = "";
-            }
-        }
-
-        private void textBox1_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (!int.TryParse(textBox1.Text, out int side))
-            {
-                textBox1.Text = "";
-            }
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            if 
+            if (rectangles == null && textBox2.Text.Length > 0)
+            {
+                rectangles = new ArrayRectangles(int.Parse(textBox2.Text));
+            }
+            if(rectangles != null )
+            {
+                if (textBox.Text.Length > 0 && textBox1.Text.Length > 0)
+                {
+                    rectangles.AddRectangle(new Rectangle(int.Parse(textBox.Text), int.Parse(textBox1.Text)));
+                }
+                else if (textBox.Text.Length == 0 && textBox1.Text.Length == 0)
+                {
+                    rectangles.AddRectangle(new Rectangle());
+                }
+                else if (textBox.Text.Length == 0)
+                {
+                    rectangles.AddRectangle(new Rectangle(int.Parse(textBox1.Text), null));
+                }
+                else if (textBox1.Text.Length == 0)
+                {
+                    rectangles.AddRectangle(new Rectangle(int.Parse(textBox.Text)));
+                }
+                textBlock.Text = rectangles.GetInfo();
+            }
+        }
+
+        private void textBox_keydown(object sender, KeyEventArgs e)
+        {
+            //e.Handled = !System.Text.RegularExpressions.Regex.IsMatch(e.Key.ToString(), "[0-9]");
+        }
+
+        private void btnDel_Click(object sender, RoutedEventArgs e)
+        {
+            Random random = new Random();
+            int i = random.Next(0, rectangles.Length);
+            rectangles.DeleteRectangle(i);
+            textBlock.Text = rectangles.GetInfo();
         }
     }
 }
